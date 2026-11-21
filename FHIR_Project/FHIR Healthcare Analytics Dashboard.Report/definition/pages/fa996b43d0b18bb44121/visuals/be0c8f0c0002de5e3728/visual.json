@@ -1,0 +1,150 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.15.0/schema.json",
+  "name": "be0c8f0c0002de5e3728",
+  "position": {
+    "x": 8.3841841318216463,
+    "y": 656.76109032602892,
+    "z": 8,
+    "height": 371.698829844093,
+    "width": 505.8457759532393,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "condition"
+                    }
+                  },
+                  "Property": "clinical_status"
+                }
+              },
+              "queryRef": "condition.clinical_status",
+              "nativeQueryRef": "clinical_status",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "All_Measures"
+                    }
+                  },
+                  "Property": "Total Conditions"
+                }
+              },
+              "queryRef": "All_Measures.Total Conditions",
+              "nativeQueryRef": "Total Conditions"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "All_Measures"
+                  }
+                },
+                "Property": "Total Conditions"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Total Conditions by Clinical Status'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f88ace42236960e80565",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "condition"
+              }
+            },
+            "Property": "clinical_status"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "47c73403332802052504",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "All_Measures"
+              }
+            },
+            "Property": "Total Conditions"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

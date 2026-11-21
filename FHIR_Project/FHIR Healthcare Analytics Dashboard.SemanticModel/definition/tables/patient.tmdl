@@ -1,0 +1,189 @@
+table patient
+	lineageTag: a5d38aaf-08c8-4871-bae1-a734a5d78876
+	sourceLineageTag: [gold].[patient]
+
+	column id
+		dataType: string
+		lineageTag: 15cd7314-233a-48d4-8c3c-4c3c6c0eb98b
+		sourceLineageTag: id
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column active
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 48a491a4-0770-4313-aa98-4df75291fc21
+		sourceLineageTag: active
+		summarizeBy: none
+		sourceColumn: active
+
+		annotation SummarizationSetBy = Automatic
+
+	column gender
+		dataType: string
+		lineageTag: 07de5e43-8542-4576-a022-4b6926b13daf
+		sourceLineageTag: gender
+		summarizeBy: none
+		sourceColumn: gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column birthDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: bc49b0c0-3d85-40d2-9120-701e921ee191
+		sourceLineageTag: birthDate
+		summarizeBy: none
+		sourceColumn: birthDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column family_name
+		dataType: string
+		lineageTag: 93fd2883-77f5-48ad-9fee-573f577a7676
+		sourceLineageTag: family_name
+		summarizeBy: none
+		sourceColumn: family_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column given_name
+		dataType: string
+		lineageTag: 651f1aa3-2211-4d08-bed4-92c72e29cf43
+		sourceLineageTag: given_name
+		summarizeBy: none
+		sourceColumn: given_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column contact
+		dataType: string
+		lineageTag: 31a20832-fbe6-4092-97a4-3d696e59ac51
+		sourceLineageTag: contact
+		summarizeBy: none
+		sourceColumn: contact
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: 35c0e993-39a4-4bfe-831d-6df6c1efb698
+		sourceLineageTag: city
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column state
+		dataType: string
+		lineageTag: b1a4cd05-3535-46ca-9783-7f2fb472f04c
+		sourceLineageTag: state
+		summarizeBy: none
+		sourceColumn: state
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		lineageTag: 60badc2a-8ba9-4eb0-8dfb-44bfe2618274
+		sourceLineageTag: country
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_last_updated
+		dataType: string
+		lineageTag: 44bffe89-6228-4dba-a76a-3e40a303365c
+		sourceLineageTag: source_last_updated
+		summarizeBy: none
+		sourceColumn: source_last_updated
+
+		annotation SummarizationSetBy = Automatic
+
+	column extraction_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 52582f93-63e6-4f61-a68c-00e4c80dc32f
+		sourceLineageTag: extraction_timestamp
+		summarizeBy: none
+		sourceColumn: extraction_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_api
+		dataType: string
+		lineageTag: 83cdefd4-d48d-4eef-a9b4-782c38229102
+		sourceLineageTag: source_api
+		summarizeBy: none
+		sourceColumn: source_api
+
+		annotation SummarizationSetBy = Automatic
+
+	column batch_id
+		dataType: string
+		lineageTag: 6729d82c-ff79-4da6-9c54-af733e88b51f
+		sourceLineageTag: batch_id
+		summarizeBy: none
+		sourceColumn: batch_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column record_hash
+		dataType: string
+		lineageTag: 1281dca0-8de1-4636-9853-fae77dacdeb4
+		sourceLineageTag: record_hash
+		summarizeBy: none
+		sourceColumn: record_hash
+
+		annotation SummarizationSetBy = Automatic
+
+	column effective_start_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: fb9481ad-86f4-4858-b287-f9a08da57ebb
+		sourceLineageTag: effective_start_date
+		summarizeBy: none
+		sourceColumn: effective_start_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column effective_end_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: faa9ff86-fcdc-4b8d-8469-484ad7f00a3b
+		sourceLineageTag: effective_end_date
+		summarizeBy: none
+		sourceColumn: effective_end_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_current
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 76ffdd25-5234-45d5-a93b-976337a6f9b0
+		sourceLineageTag: is_current
+		summarizeBy: none
+		sourceColumn: is_current
+
+		annotation SummarizationSetBy = Automatic
+
+	column scd_version
+		dataType: int64
+		formatString: 0
+		lineageTag: 7510708e-8058-445c-8414-2f0841a05e00
+		sourceLineageTag: scd_version
+		summarizeBy: sum
+		sourceColumn: scd_version
+
+		annotation SummarizationSetBy = Automatic
+
+	partition patient = entity
+		mode: directLake
+		source
+			entityName: patient
+			schemaName: gold
+			expressionSource: 'DirectLake - FHIR_Lakehouse'
+

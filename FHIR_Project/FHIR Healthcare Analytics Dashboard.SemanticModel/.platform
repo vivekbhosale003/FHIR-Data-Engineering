@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "FHIR Healthcare Analytics Dashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "c54e2117-47e5-8b41-4551-e90d4b88d8bd"
+  }
+}

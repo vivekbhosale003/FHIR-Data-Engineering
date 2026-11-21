@@ -1,0 +1,178 @@
+table encounter
+	lineageTag: fba66866-727c-40d7-a78f-d076da871f4a
+	sourceLineageTag: [gold].[encounter]
+
+	column id
+		dataType: string
+		lineageTag: 44fda71a-3ffa-4bde-b252-bf031f3bf4a0
+		sourceLineageTag: id
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: 7a1db525-34d7-4575-b5d3-cbc572872287
+		sourceLineageTag: status
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column encounter_class
+		dataType: string
+		lineageTag: 3bb43507-a346-4f29-96ad-cfc460928ac3
+		sourceLineageTag: encounter_class
+		summarizeBy: none
+		sourceColumn: encounter_class
+
+		annotation SummarizationSetBy = Automatic
+
+	column patient_reference
+		dataType: string
+		lineageTag: 037bdf32-f9b6-43f6-9f62-593a3ad9c0c8
+		sourceLineageTag: patient_reference
+		summarizeBy: none
+		sourceColumn: patient_reference
+
+		annotation SummarizationSetBy = Automatic
+
+	column period_start
+		dataType: string
+		lineageTag: c03c471f-9f02-4239-896c-c91116eed9d5
+		sourceLineageTag: period_start
+		summarizeBy: none
+		sourceColumn: period_start
+
+		annotation SummarizationSetBy = Automatic
+
+	column period_end
+		dataType: string
+		lineageTag: 1eca2081-ae13-4770-a9f5-de14639c3759
+		sourceLineageTag: period_end
+		summarizeBy: none
+		sourceColumn: period_end
+
+		annotation SummarizationSetBy = Automatic
+
+	column encounter_type_code
+		dataType: string
+		lineageTag: a49e3821-198e-47c2-ba47-54ab85d7fd22
+		sourceLineageTag: encounter_type_code
+		summarizeBy: none
+		sourceColumn: encounter_type_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column encounter_type
+		dataType: string
+		lineageTag: 1153afa1-573c-4d9f-9c9b-09a5c9a62b17
+		sourceLineageTag: encounter_type
+		summarizeBy: none
+		sourceColumn: encounter_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column service_provider
+		dataType: string
+		lineageTag: 2a7eea97-3ca5-45a3-a732-5b4c3a4a2a8f
+		sourceLineageTag: service_provider
+		summarizeBy: none
+		sourceColumn: service_provider
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_last_updated
+		dataType: string
+		lineageTag: 0a15b97e-4c88-4aed-b256-6807139ab59a
+		sourceLineageTag: source_last_updated
+		summarizeBy: none
+		sourceColumn: source_last_updated
+
+		annotation SummarizationSetBy = Automatic
+
+	column extraction_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: aa61ef47-fb52-4b6e-bbd7-92430a224456
+		sourceLineageTag: extraction_timestamp
+		summarizeBy: none
+		sourceColumn: extraction_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_api
+		dataType: string
+		lineageTag: eb43f05e-ada9-4ea5-85c8-8b2332167c13
+		sourceLineageTag: source_api
+		summarizeBy: none
+		sourceColumn: source_api
+
+		annotation SummarizationSetBy = Automatic
+
+	column batch_id
+		dataType: string
+		lineageTag: b3b14f00-ed09-4d13-9b75-b0626db562fe
+		sourceLineageTag: batch_id
+		summarizeBy: none
+		sourceColumn: batch_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column record_hash
+		dataType: string
+		lineageTag: a00d33b2-61d3-4529-9665-a8358e2b1a68
+		sourceLineageTag: record_hash
+		summarizeBy: none
+		sourceColumn: record_hash
+
+		annotation SummarizationSetBy = Automatic
+
+	column effective_start_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 693aa38b-3a7f-42d0-90ee-4fa2d84ac039
+		sourceLineageTag: effective_start_date
+		summarizeBy: none
+		sourceColumn: effective_start_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column effective_end_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f9084317-1c0e-4022-b88d-72188967f23b
+		sourceLineageTag: effective_end_date
+		summarizeBy: none
+		sourceColumn: effective_end_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_current
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 7c243ae6-1dc9-4ebc-9a6a-58f4239b406c
+		sourceLineageTag: is_current
+		summarizeBy: none
+		sourceColumn: is_current
+
+		annotation SummarizationSetBy = Automatic
+
+	column scd_version
+		dataType: int64
+		formatString: 0
+		lineageTag: 50451b58-ca1c-4e3f-bb56-fdc3ceb6961b
+		sourceLineageTag: scd_version
+		summarizeBy: sum
+		sourceColumn: scd_version
+
+		annotation SummarizationSetBy = Automatic
+
+	partition encounter = entity
+		mode: directLake
+		source
+			entityName: encounter
+			schemaName: gold
+			expressionSource: 'DirectLake - FHIR_Lakehouse'
+

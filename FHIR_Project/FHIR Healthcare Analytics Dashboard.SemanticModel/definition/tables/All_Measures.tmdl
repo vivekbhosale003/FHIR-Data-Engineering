@@ -1,0 +1,37 @@
+table All_Measures
+	lineageTag: c4718463-a30f-43fb-9233-4ee51d44eca0
+
+	measure 'Total Patients' = DISTINCTCOUNT(Patient[id])
+		formatString: 0
+		lineageTag: 9f89c8ad-b463-4705-bf3a-71919611168b
+
+	measure 'Total Encounters' = COUNTROWS(Encounter)
+		formatString: 0
+		lineageTag: a7fce7de-cc2b-4724-b042-1908343827c9
+
+	measure 'Total Observations' = COUNTROWS(Observation)
+		formatString: 0
+		lineageTag: 408f1d39-cf98-46b5-b8f0-5aaf2ad112b3
+
+	measure 'Total Conditions' = COUNTROWS('condition')
+		formatString: 0
+		lineageTag: 4129ca23-95a2-449d-a6f1-6f7a68c331cd
+
+	column Column
+		isHidden
+		formatString: 0
+		lineageTag: 89644af5-f722-4f31-abec-d9eb95d1f7c6
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition All_Measures = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = 3085f832634841e3bdb1a5f1c40cdea5
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+

@@ -1,0 +1,198 @@
+table observation
+	lineageTag: 8ecce7e8-f365-4665-ac09-98c31914c80e
+	sourceLineageTag: [gold].[observation]
+
+	column id
+		dataType: string
+		lineageTag: 895dc0c2-22ad-4e0d-99e1-49d13d30a242
+		sourceLineageTag: id
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: 63760657-10ec-45b8-86b8-796356d2796d
+		sourceLineageTag: status
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column patient_reference
+		dataType: string
+		lineageTag: ef5144d5-82f7-4b45-a6cb-711bb0a6ab26
+		sourceLineageTag: patient_reference
+		summarizeBy: none
+		sourceColumn: patient_reference
+
+		annotation SummarizationSetBy = Automatic
+
+	column category_code
+		dataType: string
+		lineageTag: 159ddf9a-048a-4dc9-8f71-06407371c66e
+		sourceLineageTag: category_code
+		summarizeBy: none
+		sourceColumn: category_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column category
+		dataType: string
+		lineageTag: 21526ec5-ea77-469f-a10a-70d3eefad250
+		sourceLineageTag: category
+		summarizeBy: none
+		sourceColumn: category
+
+		annotation SummarizationSetBy = Automatic
+
+	column observation_code
+		dataType: string
+		lineageTag: b5cbc9c4-a5ca-4a4b-a30b-c3d8bc1e824f
+		sourceLineageTag: observation_code
+		summarizeBy: none
+		sourceColumn: observation_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column observation_name
+		dataType: string
+		lineageTag: c73a40fc-d96c-4af1-9b57-b5aaea26ba91
+		sourceLineageTag: observation_name
+		summarizeBy: none
+		sourceColumn: observation_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column value
+		dataType: double
+		lineageTag: e9c2e6d2-002d-4a69-ab3d-4e1ff27b7d34
+		sourceLineageTag: value
+		summarizeBy: sum
+		sourceColumn: value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column unit
+		dataType: string
+		lineageTag: c04b07ba-d219-4b8b-87cf-adb5b754cc5b
+		sourceLineageTag: unit
+		summarizeBy: none
+		sourceColumn: unit
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_code
+		dataType: string
+		lineageTag: 902f5037-edf0-43a7-8c9d-240a53207454
+		sourceLineageTag: unit_code
+		summarizeBy: none
+		sourceColumn: unit_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column effective_datetime
+		dataType: string
+		lineageTag: a87b0edb-fa76-41c9-a9a4-34c3a8b4ac7a
+		sourceLineageTag: effective_datetime
+		summarizeBy: none
+		sourceColumn: effective_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_last_updated
+		dataType: string
+		lineageTag: 2d4b1566-f120-4408-8f2e-8b7a39af373e
+		sourceLineageTag: source_last_updated
+		summarizeBy: none
+		sourceColumn: source_last_updated
+
+		annotation SummarizationSetBy = Automatic
+
+	column extraction_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f75efbf5-8307-43b3-8221-fd6930c41a63
+		sourceLineageTag: extraction_timestamp
+		summarizeBy: none
+		sourceColumn: extraction_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_api
+		dataType: string
+		lineageTag: c04ce963-47e0-45bb-bf9c-037ccdabb47d
+		sourceLineageTag: source_api
+		summarizeBy: none
+		sourceColumn: source_api
+
+		annotation SummarizationSetBy = Automatic
+
+	column batch_id
+		dataType: string
+		lineageTag: d6664fb8-5fde-4ca0-b503-3e843ece573e
+		sourceLineageTag: batch_id
+		summarizeBy: none
+		sourceColumn: batch_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column record_hash
+		dataType: string
+		lineageTag: 86e937f6-3867-4104-b058-f26ae049534b
+		sourceLineageTag: record_hash
+		summarizeBy: none
+		sourceColumn: record_hash
+
+		annotation SummarizationSetBy = Automatic
+
+	column effective_start_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 54411735-6e88-4b76-b392-2899cb5d5e87
+		sourceLineageTag: effective_start_date
+		summarizeBy: none
+		sourceColumn: effective_start_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column effective_end_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 63397c9f-9935-4ab7-8f84-ec2671e2f616
+		sourceLineageTag: effective_end_date
+		summarizeBy: none
+		sourceColumn: effective_end_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_current
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 70d4fecd-2160-40dd-96be-87e330c2816b
+		sourceLineageTag: is_current
+		summarizeBy: none
+		sourceColumn: is_current
+
+		annotation SummarizationSetBy = Automatic
+
+	column scd_version
+		dataType: int64
+		formatString: 0
+		lineageTag: 7433baf2-dd92-43fd-9079-86e5cb9df4f6
+		sourceLineageTag: scd_version
+		summarizeBy: sum
+		sourceColumn: scd_version
+
+		annotation SummarizationSetBy = Automatic
+
+	partition observation = entity
+		mode: directLake
+		source
+			entityName: observation
+			schemaName: gold
+			expressionSource: 'DirectLake - FHIR_Lakehouse'
+

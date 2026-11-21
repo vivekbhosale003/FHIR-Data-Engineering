@@ -1,0 +1,491 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.15.0/schema.json",
+  "name": "626deb32001ab05b1900",
+  "position": {
+    "x": 539.38251248052586,
+    "y": 656.76109032602892,
+    "z": 9,
+    "height": 371.698829844093,
+    "width": 1362.4299214210175,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "patient"
+                    }
+                  },
+                  "Property": "id"
+                }
+              },
+              "queryRef": "patient.id",
+              "nativeQueryRef": "id"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "patient"
+                    }
+                  },
+                  "Property": "given_name"
+                }
+              },
+              "queryRef": "patient.given_name",
+              "nativeQueryRef": "given_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "patient"
+                    }
+                  },
+                  "Property": "family_name"
+                }
+              },
+              "queryRef": "patient.family_name",
+              "nativeQueryRef": "family_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "patient"
+                    }
+                  },
+                  "Property": "gender"
+                }
+              },
+              "queryRef": "patient.gender",
+              "nativeQueryRef": "gender"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "patient"
+                    }
+                  },
+                  "Property": "birthDate"
+                }
+              },
+              "queryRef": "patient.birthDate",
+              "nativeQueryRef": "birthDate"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "patient"
+                    }
+                  },
+                  "Property": "city"
+                }
+              },
+              "queryRef": "patient.city",
+              "nativeQueryRef": "city"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "patient"
+                    }
+                  },
+                  "Property": "state"
+                }
+              },
+              "queryRef": "patient.state",
+              "nativeQueryRef": "state"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "patient"
+                    }
+                  },
+                  "Property": "country"
+                }
+              },
+              "queryRef": "patient.country",
+              "nativeQueryRef": "country"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "patient"
+                    }
+                  },
+                  "Property": "source_api"
+                }
+              },
+              "queryRef": "patient.source_api",
+              "nativeQueryRef": "source_api"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "118.07751816828342D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "patient.id"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "223.42076643241114D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "patient.family_name"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "140.26866084977956D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "patient.gender"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "241.25900896643313D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "patient.birthDate"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "103.5988359403886D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "patient.country"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "178.88698225118566D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "patient.state"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "95.78273193236907D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "patient.city"
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "patient.id"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "bdca4b53d3e927b90027",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "patient"
+              }
+            },
+            "Property": "id"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "27c561b5aa8d67c0cabe",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "patient"
+              }
+            },
+            "Property": "family_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "194dec340138b62085b5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "patient"
+              }
+            },
+            "Property": "gender"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d1767499b105b5649db6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "patient"
+              }
+            },
+            "Property": "birthDate"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e905ffc0038b4d9b8455",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "patient"
+              }
+            },
+            "Property": "city"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "p",
+              "Entity": "patient",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "p"
+                              }
+                            },
+                            "Property": "city"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "null"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "d5d258fd8061a096b602",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "patient"
+              }
+            },
+            "Property": "country"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "705a651a24a0693e54e9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "patient"
+              }
+            },
+            "Property": "state"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "82d0b566660e8204107e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "patient"
+              }
+            },
+            "Property": "source_api"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "bce21d99c196cea0ceaa",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "patient"
+              }
+            },
+            "Property": "given_name"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}
