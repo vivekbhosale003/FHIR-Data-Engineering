@@ -1,134 +1,132 @@
-FHIR Data Engineering Project – Microsoft Fabric
+# FHIR Data Engineering Project – Microsoft Fabric
 
-Project Overview
+## 📌 Project Overview
 
-This project demonstrates an end-to-end healthcare data engineering solution using Microsoft Fabric. Healthcare data is ingested from a public FHIR R4 API, processed through a Medallion Architecture (Bronze, Silver, Gold), and made available for analytics through a Power BI Direct Lake report.
+This project demonstrates an end-to-end healthcare data engineering solution using Microsoft Fabric.
+
+Healthcare data is ingested from a public FHIR R4 API, processed through a Medallion Architecture (Bronze, Silver, Gold), and made available for analytics through a Power BI Direct Lake report.
 
 The project demonstrates API ingestion, data transformation, Delta Lake, SCD Type 2, pipeline orchestration, and reporting.
 
-Architecture
+---
 
-Source API → Raw → Bronze → Silver → Gold → Power BI
+## 🏗️ Architecture
 
-Source: HAPI FHIR R4 Public API
+**Source API → Raw → Bronze → Silver → Gold → Power BI**
 
-Orchestration: Microsoft Fabric Data Pipeline
+- **Source:** HAPI FHIR R4 Public API
+- **Orchestration:** Microsoft Fabric Data Pipeline
+- **Storage:** Fabric Lakehouse / Delta Tables
+- **Analytics:** Power BI Direct Lake
 
-Storage: Fabric Lakehouse / Delta Tables
+---
 
-Analytics: Power BI Direct Lake
-
-Data Source
+## 🔗 Data Source
 
 Public FHIR R4 API:
 
 https://hapi.fhir.org/baseR4
 
-The project extracts the following FHIR resource types:
+### FHIR Resources
 
-Patient
+- Patient
+- Encounter
+- Observation
+- Condition
 
-Encounter
+---
 
-Observation
+## 🥉 Raw Layer
 
-Condition
+- Extracts data from the FHIR API.
+- Handles API pagination.
+- Stores raw JSON files in the Lakehouse.
+- Maintains raw data for downstream processing.
 
-Medallion Architecture
+---
 
-Raw Layer
+## 🥉 Bronze Layer
 
-Extracts data from the FHIR API.
+- Loads raw JSON data into Delta tables.
+- Preserves source-level data structures.
+- Creates Bronze tables for each resource.
 
-Handles API pagination.
+---
 
-Stores raw JSON files in the Lakehouse.
+## 🥈 Silver Layer
 
-Maintains raw data for downstream processing.
+- Flattens nested FHIR structures.
+- Cleans and standardizes data.
+- Removes duplicate records.
+- Implements SCD Type 2 for historical tracking.
+- Maintains record hash and effective date metadata.
 
-Bronze Layer
+### Silver Tables
 
-Loads raw JSON data into Delta tables.
+- `silver.Patient`
+- `silver.Encounter`
+- `silver.Observation`
+- `silver.Condition`
 
-Preserves source-level data structures.
+---
 
-Creates Bronze tables for each resource.
+## 🥇 Gold Layer
 
-Silver Layer
+- Stores analytical-ready tables.
+- Uses current records from Silver.
+- Prepares datasets for reporting and analytics.
 
-Flattens nested FHIR structures.
+### Gold Tables
 
-Cleans and standardizes data.
+- `gold.Patient`
+- `gold.Encounter`
+- `gold.Observation`
+- `gold.Condition`
 
-Removes duplicate records.
+---
 
-Implements SCD Type 2 for historical tracking.
-
-Maintains record hash and effective date metadata.
-
-Gold Layer
-
-Stores analytical-ready tables.
-
-Uses current records from Silver.
-
-Creates datasets for reporting and analytics.
-
-Gold tables:
-
-gold.Patient
-
-gold.Encounter
-
-gold.Observation
-
-gold.Condition
-
-Pipeline Orchestration
+## ⚙️ Pipeline Orchestration
 
 The end-to-end pipeline is implemented using Microsoft Fabric Data Pipelines.
 
-Pipeline: PL_FHIR_EndToEnd
+### Pipeline Name
 
-Pipeline execution flow:
+`PL_FHIR_EndToEnd`
 
-Raw API Extraction
+### Execution Flow
 
-Bronze Processing
+1. Raw API Extraction
+2. Bronze Processing
+3. Silver Processing
+4. Gold Processing
+5. Semantic Model Refresh
 
-Silver Processing
+Each stage executes sequentially, with downstream execution dependent on successful completion of the preceding stage.
 
-Gold Processing
+---
 
-Semantic Model Refresh
+## 📊 Power BI Dashboard
 
-Each processing stage is orchestrated sequentially, with downstream execution dependent on successful completion of the preceding stage.
+A single-page healthcare analytics dashboard was developed using Power BI and a Direct Lake semantic model.
 
-Power BI Dashboard
+### Dashboard Metrics
 
-The project includes a single-page healthcare analytics dashboard built using Power BI and a Direct Lake semantic model.
+- Total Patients
+- Total Encounters
+- Total Observations
+- Total Conditions
 
-Dashboard metrics and visuals include:
+### Dashboard Visuals
 
-Total Patients
+- Patients by Gender
+- Encounters by Status
+- Observations by Category
+- Conditions by Clinical Status
+- Patient Details
 
-Total Encounters
+---
 
-Total Observations
-
-Total Conditions
-
-Patients by Gender
-
-Encounters by Status
-
-Observations by Category
-
-Conditions by Clinical Status
-
-Patient Details
-
-Data Quality Observations
+## 🔍 Data Quality Observations
 
 The public FHIR API contains independently generated resource records, which can result in patient references that do not match records in the Patient dataset.
 
@@ -136,35 +134,44 @@ The project identifies and retains these data quality observations rather than a
 
 This demonstrates real-world data quality assessment and handling of source-system inconsistencies.
 
-Technology Stack
+---
 
-Microsoft Fabric
+## 🛠️ Technology Stack
 
-Fabric Data Factory / Data Pipelines
+| Technology | Purpose |
+|---|---|
+| Microsoft Fabric | Data engineering platform |
+| Fabric Data Pipelines | Pipeline orchestration |
+| Fabric Notebooks | Data processing |
+| Lakehouse | Data storage |
+| Delta Lake | Data storage format |
+| PySpark | Data transformation |
+| Python | API ingestion |
+| FHIR R4 API | Source system |
+| Power BI | Data visualization |
+| Direct Lake | Analytics connectivity |
+| SCD Type 2 | Historical tracking |
+| Medallion Architecture | Data architecture |
 
-Fabric Notebooks
+---
 
-Lakehouse
+## 🎯 Project Objective
 
-Delta Lake
+To build a practical end-to-end data engineering pipeline demonstrating:
 
-PySpark
+- API Data Ingestion
+- Data Processing
+- Medallion Architecture
+- Delta Lake
+- SCD Type 2
+- Pipeline Orchestration
+- Data Quality Analysis
+- Power BI Analytics
 
-Python
+---
 
-FHIR R4 API
+## 👨‍💻 Author
 
-Power BI
+**Vivek Bhosale**
 
-Direct Lake
-
-SCD Type 2
-
-Medallion Architecture
-
-Project Objective
-
-To build a practical end-to-end data engineering pipeline that demonstrates data ingestion, transformation, historical data tracking, orchestration, analytics-ready data preparation, and dashboard reporting using Microsoft Fabric.
-
-Author: Vivek Bhosale
 GitHub: https://github.com/vivekbhosale003/FHIR-Data-Engineering
